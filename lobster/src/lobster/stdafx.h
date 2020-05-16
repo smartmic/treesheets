@@ -49,7 +49,12 @@
 #include <array>
 #include <type_traits>
 #include <memory>
-#include <optional>
+
+#if defined(__has_include) && __has_include(<optional>)
+    #include <optional>
+#else
+    #include <experimental/optional>
+#endif
 
 #if defined(__has_include) && __has_include(<string_view>)
     #include <string_view>
